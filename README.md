@@ -22,7 +22,7 @@ https://finbot-cl7jxrpbsx6klg5juwiqrp.streamlit.app/
 
 ___
 Testing Agent:
-
+```
 # Agent classes
 class FinancialAnalyst:
     def __init__(self, llm):
@@ -111,3 +111,4 @@ def comprehensive_analysis(financial_report, llm):
             recommendation_placeholder.markdown(recommendation)
 
     return {"analysis": analysis, "review": review, "recommendation": recommendation}
+```
