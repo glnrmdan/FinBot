@@ -11,5 +11,8 @@ pinned: false
 
 Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
 
+FinBot
+![image info](untitled.png)
+
 You can access the App on:
 https://finbot-cl7jxrpbsx6klg5juwiqrp.streamlit.app/
