@@ -1,11 +1,9 @@
 from langchain_huggingface import HuggingFaceEndpoint
-from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from huggingface_hub import InferenceClient
-from langchain.callbacks import StreamingStdOutCallbackHandler
-from langchain_community.chat_models import ChatOpenAI
-from langchain_community.chains import ConversationalRetrievalChain, LLMChain
+from langchain.chains import ConversationalRetrievalChain
+from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
 import streamlit as st
 import functools
@@ -18,6 +16,15 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 logger.info("Starting application...")
+logger.info("Importing modules...")
+
+# Kemudian lanjutkan dengan impor Anda
+try:
+    from langchain_community.chains import ConversationalRetrievalChain, LLMChain
+    logger.info("Successfully imported from langchain_community")
+except ImportError as e:
+    logger.error(f"Error importing from langchain_community: {e}")
+    # Tambahkan penanganan error atau impor alternatif di sini
 
 MODEL_ID="mistralai/Mistral-7B-Instruct-v0.3"
 MAX_PDF_CHARS = 10000
