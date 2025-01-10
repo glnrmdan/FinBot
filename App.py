@@ -4,17 +4,20 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from huggingface_hub import InferenceClient
 from langchain.callbacks import StreamingStdOutCallbackHandler
-from langchain_core.prompts import PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
-from langchain.chat_models import ChatOpenAI
-from langchain.chains import ConversationalRetrievalChain
+from langchain_community.chat_models import ChatOpenAI
+from langchain_community.chains import ConversationalRetrievalChain, LLMChain
 from langchain.memory import ConversationBufferMemory
-from langchain.chains import LLMChain
 import streamlit as st
 import functools
 import pdfplumber
 import uuid
 import os
+
+import logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+logger.info("Starting application...")
 
 MODEL_ID="mistralai/Mistral-7B-Instruct-v0.3"
 MAX_PDF_CHARS = 10000
